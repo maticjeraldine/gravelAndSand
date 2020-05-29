@@ -14,8 +14,9 @@
                             <span class="col-md-3"></span>
 
                             <div class="col-md-6 ">
-                                <input id="fname" type="text" class="form-control @error('fname') is-invalid @enderror" placeholder="Firstname"
-                                    name="fname" value="{{ old('fname') }}" required autocomplete="fname" autofocus>
+                                <input id="fname" type="text" class="form-control @error('fname') is-invalid @enderror"
+                                    placeholder="Firstname" name="fname" value="{{ old('fname') }}" required
+                                    autocomplete="fname" autofocus>
 
                                 @error('fname')
                                 <span class="invalid-feedback" role="alert">
@@ -29,8 +30,9 @@
                             <span class="col-md-3"></span>
 
                             <div class="col-md-6">
-                                <input id="lname" type="text" class="form-control @error('lname') is-invalid @enderror" placeholder="Lastname"
-                                    name="lname" value="{{ old('lname') }}" required autocomplete="lname" autofocus>
+                                <input id="lname" type="text" class="form-control @error('lname') is-invalid @enderror"
+                                    placeholder="Lastname" name="lname" value="{{ old('lname') }}" required
+                                    autocomplete="lname" autofocus>
 
                                 @error('lname')
                                 <span class="invalid-feedback" role="alert">
@@ -44,8 +46,9 @@
                             <span class="col-md-3"></span>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" placeholder="Email"
-                                    name="email" value="{{ old('email') }}" required autocomplete="email">
+                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror"
+                                    placeholder="Email" name="email" value="{{ old('email') }}" required
+                                    autocomplete="email">
 
                                 @error('email')
                                 <span class="invalid-feedback" role="alert">
@@ -60,8 +63,8 @@
 
                             <div class="col-md-6">
                                 <input id="password" type="password"
-                                    class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password"
-                                    required autocomplete="new-password">
+                                    class="form-control @error('password') is-invalid @enderror" name="password"
+                                    placeholder="Password" required autocomplete="new-password">
 
                                 @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -75,22 +78,37 @@
                             <span class="col-md-3"></span>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" placeholder="Re-type Password"
-                                    name="password_confirmation" required autocomplete="new-password">
+                                <input id="password-confirm" type="password" class="form-control"
+                                    placeholder="Re-type Password" name="password_confirmation" required
+                                    autocomplete="new-password">
                             </div>
                         </div>
 
-                        <div class="form-group row mb-0">
+                        {{-- <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-warning font-weight-bold btnr">
                                     {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
+                        </button>
+                </div>
+            </div> --}}
+            <div class="form-group row mb-0 " style="margin-left:5%">
+                <div class="col-md-8 offset-md-4">
+                    <button type="submit" class="btn btn-warning font-weight-bold btnr">
+                        {{ __('Register') }}
+                    </button>
+                    <a type="button" class="btn font-weight-bold btnr1"
+                        href="{{ route('login') }}"><span>Login</span></span>
+
+                        @if (Route::has('password.request'))
+                        <a class="btn btn-link" href="{{ route('password.request') }}">
+                        </a>
+                        @endif
                 </div>
             </div>
+            </form>
         </div>
     </div>
+</div>
+</div>
 </div>
 @endsection
